@@ -1,0 +1,22 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 11%;
+    width: 89%;
+    height: 10%;
+    color: antiquewhite;
+    background-color: #757851;
+}
+
+#navbar p {
+    font-size: larger;
+    padding: 0% 3%;
+    margin-top: 1%;
+}
+
+#navbar p:hover{
+    font-weight: 600;
+}
