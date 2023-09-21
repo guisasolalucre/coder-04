@@ -1,13 +1,13 @@
 <div class="content">
 
     <button type="button" class="btn"
-        [ngClass]="show ? 'btn-danger' : 'btn-success'"
-        (click)="show = !show"
+        [ngClass]="showAll ? 'btn-danger' : 'btn-success'"
+        (click)="showAll = !showAll"
     >
-        {{ show ? 'Ocultar alumnos' : 'Mostrar alumnos' }}
+        {{ showAll ? 'Ocultar alumnos' : 'Mostrar alumnos' }}
     </button>
 
-    <table *ngIf="show">
+    <table *ngIf="showAll">
         <tr>
             <td class="table-title">DNI</td>
             <td class="table-title">Nombre</td>
