@@ -1,27 +1,30 @@
 <div class="content">
 
-    <button type="button" class="btn"
-        [ngClass]="showAll ? 'btn-danger' : 'btn-success'"
-        (click)="showAll = !showAll"
-    >
-        {{ showAll ? 'Ocultar alumnos' : 'Mostrar alumnos' }}
+    <button type="button" class="btn" 
+        [ngClass]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
+        (click)="mostrarTodos = !mostrarTodos">
+        {{ mostrarTodos ? 'Ocultar todo' : 'Mostrar todo' }}
     </button>
 
-    <table *ngIf="showAll">
-        <tr>
-            <td class="table-title">DNI</td>
-            <td class="table-title">Nombre</td>
-            <td class="table-title">Apellido</td>
-            <td class="table-title">Nacimiento</td>
-            <td class="table-title average">Promedio</td>
-        </tr>
-        <tr *ngFor="let alumno of alumnosList" 
-            [ngStyle]="{'color': alumno.avgNote < pass ? 'red' : 'black'}">
-            <td>{{alumno.id | number: '1.0-0'}}</td>
-            <td>{{alumno.name | titlecase}}</td>
-            <td>{{alumno.surname| titlecase}}</td>
-            <td>{{alumno.dob | date: 'dd/MM/yyyy'}}</td>
-            <td class="average">{{alumno.avgNote | number: '1.2-2'}}</td>
-        </tr>
-    </table>
+
+    <div>
+        <table *ngIf="mostrarTodos">
+            <tr>
+                <td class="table-title">DNI</td>
+                <td class="table-title">Nombre</td>
+                <td class="table-title">Apellido</td>
+                <td class="table-title">Nacimiento</td>
+                <td class="table-title average">Promedio</td>
+            </tr>
+            <tr *ngFor="let alumno of alumnosList" 
+                [ngStyle]="{'color': alumno.avgNote < passNote ? 'red' : 'black'}">
+                <td>{{alumno.id | number: '1.0-0'}}</td>
+                <td>{{alumno.name | titlecase}}</td>
+                <td>{{alumno.surname| titlecase}}</td>
+                <td>{{alumno.dob | date: 'dd/MM/yyyy'}}</td>
+                <td class="average">{{alumno.avgNote | number: '1.2-2'}}</td>
+            </tr>
+        </table>
+    </div>
+
 </div>

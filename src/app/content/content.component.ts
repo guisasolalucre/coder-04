@@ -8,12 +8,11 @@ import { Alumno } from '../alumno/Alumno';
 })
 export class ContentComponent {
 
-  alumnosList: Array<Alumno> = []
+  public readonly passNote: number = 6;
+  public alumnosList: Array<Alumno> = [];
+  public mostrarTodos: boolean = true;
 
-  pass: number = 6;
-  showAll: boolean = true;
-
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
 
@@ -25,6 +24,14 @@ export class ContentComponent {
     let alumno6 = new Alumno("55555555", "PETER", "PARKER", new Date(2003, 2, 30), 7.75);
 
     this.alumnosList.push(alumno1, alumno2, alumno3, alumno4, alumno5, alumno6)
+  }
+
+  getAprobados(): Array<Alumno>{
+    return this.alumnosList.filter((alumno) => alumno.avgNote >= this.passNote)
+  }
+
+  getDesaprobados(): Array<Alumno> {
+    return this.alumnosList.filter((alumno) => alumno.avgNote < this.passNote)
   }
 
 
