@@ -1,4 +1,4 @@
-import { IAlumno } from "./IAlumno"
+import { IAlumno } from "./"
 
 export class Alumno implements IAlumno{
 

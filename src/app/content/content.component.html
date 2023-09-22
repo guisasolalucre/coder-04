@@ -2,8 +2,13 @@
 
     <button type="button" class="btn" 
         [ngClass]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
-        (click)="mostrarTodos = !mostrarTodos">
+        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0">
         {{ mostrarTodos ? 'Ocultar todo' : 'Mostrar todo' }}
+    </button>
+    <button type="button" class="btn" 
+        [ngClass]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
+        (click)="change()">
+        {{ passFlag === 1 ? 'Mostrar desaprobados' : 'Mostrar aprobados' }}
     </button>
 
 
@@ -16,7 +21,7 @@
                 <td class="table-title">Nacimiento</td>
                 <td class="table-title average">Promedio</td>
             </tr>
-            <tr *ngFor="let alumno of alumnosList" 
+            <tr *ngFor="let alumno of showList()" 
                 [ngStyle]="{'color': alumno.avgNote < passNote ? 'red' : 'black'}">
                 <td>{{alumno.id | number: '1.0-0'}}</td>
                 <td>{{alumno.name | titlecase}}</td>
