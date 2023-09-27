@@ -7,7 +7,8 @@ export class Alumno implements IAlumno{
         public name: string, 
         public surname: string, 
         public dob: Date,
-        public avgNote: number){
+        public avgNote: number,
+        public email: string){
     }
 
 

@@ -44,5 +44,9 @@ export class ContentComponent {
     }    
   }
 
+  sendEmail(event: string){
+    alert("se envió mail a " + event)
+  }
+
 
 }

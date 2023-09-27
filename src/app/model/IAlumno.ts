@@ -3,4 +3,6 @@ export interface IAlumno {
     name: string;
     surname: string;
     dob: Date;
+    avgNote: number;
+    email: string;
 }

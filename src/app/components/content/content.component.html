@@ -1,40 +1,23 @@
 <div class="content">
 
-    <app-button-change
-        [color]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
-        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0"
-    >
+    <app-button-change 
+        [color]="mostrarTodos ? 'btn-danger' : 'btn-success'"
+        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0">
         {{ mostrarTodos ? 'Ocultar' : 'Todo' }}
     </app-button-change>
 
     <app-button-change 
         [color]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
-        (click)="change()"
-    >
+        (click)="change()">
         {{ passFlag === 1 ? 'Desaprobados' : 'Aprobados' }}
     </app-button-change>
 
 
-    <div>
-        <table *ngIf="mostrarTodos">
-            <thead> 
-                <td class="table-title">DNI</td>
-                <td class="table-title">Nombre</td>
-                <td class="table-title">Apellido</td>
-                <td class="table-title">Nacimiento</td>
-                <td class="table-title average">Promedio</td>
-            </thead>
-            <tbody>
-                <tr *ngFor="let alumno of showList()" 
-                    [ngStyle]="{'color': alumno.avgNote < passNote ? 'red' : 'black'}">
-                    <td>{{alumno.id | number: '1.0-0'}}</td>
-                    <td>{{alumno.name | titlecase}}</td>
-                    <td>{{alumno.surname| titlecase}}</td>
-                    <td>{{alumno.dob | date: 'dd/MM/yyyy'}}</td>
-                    <td class="average">{{alumno.avgNote | number: '1.2-2'}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <app-students-table
+        *ngIf="mostrarTodos"
+        [list]= showList()
+        [passNote]="passNote"
+        (send)="sendEmail($event)">
+    </app-students-table>
 
 </div>

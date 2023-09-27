@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <td class="table-title">DNI</td>
+        <td class="table-title">Nombre</td>
+        <td class="table-title">Apellido</td>
+        <td class="table-title">Nacimiento</td>
+        <td class="table-title average">Promedio</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of list" [ngStyle]="{'color': alumno.avgNote < passNote ? 'red' : 'black'}">
+            <td>{{alumno.id | number: '1.0-0'}}</td>
+            <td>{{alumno.name | titlecase}}</td>
+            <td>{{alumno.surname| titlecase}}</td>
+            <td>{{alumno.dob | date: 'dd/MM/yyyy'}}</td>
+            <td class="average">{{alumno.avgNote | number: '1.2-2'}}</td>
+            <td class="send">
+                <button class="btn btn-secondary btn-sm"
+                    (click)=sendEmail(alumno)>
+                    Enviar mail
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
