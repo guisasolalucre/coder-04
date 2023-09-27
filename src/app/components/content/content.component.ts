@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Alumno } from '../model';
+import { Alumno } from '../../model';
 
 @Component({
   selector: 'app-content',
@@ -26,6 +26,8 @@ export class ContentComponent {
     let alumno6 = new Alumno("55555555", "PETER", "PARKER", new Date(2003, 2, 30), 7.75);
 
     this.alumnosList.push(alumno1, alumno2, alumno3, alumno4, alumno5, alumno6)
+
+    console.log(this.alumnosList)
   }
 
   getAprobados(): Array<Alumno> {
@@ -59,7 +61,7 @@ export class ContentComponent {
       this.passFlag = 2
     } else {
       this.passFlag = 1
-    }
+    }    
   }
 
 

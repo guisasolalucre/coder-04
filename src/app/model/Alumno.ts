@@ -10,4 +10,5 @@ export class Alumno implements IAlumno{
         public avgNote: number){
     }
 
+
 }

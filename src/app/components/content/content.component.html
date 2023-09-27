@@ -1,15 +1,18 @@
 <div class="content">
 
-    <button type="button" class="btn" 
-        [ngClass]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
-        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0">
+    <app-button-change
+        [color]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
+        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0"
+    >
         {{ mostrarTodos ? 'Ocultar todo' : 'Mostrar todo' }}
-    </button>
-    <button type="button" class="btn" 
-        [ngClass]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
-        (click)="change()">
+    </app-button-change>
+
+    <app-button-change 
+        [color]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
+        (click)="change()"
+    >
         {{ passFlag === 1 ? 'Mostrar desaprobados' : 'Mostrar aprobados' }}
-    </button>
+    </app-button-change>
 
 
     <div>
