@@ -4,14 +4,14 @@
         [color]="mostrarTodos ? 'btn-danger' : 'btn-success'" 
         (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0"
     >
-        {{ mostrarTodos ? 'Ocultar todo' : 'Mostrar todo' }}
+        {{ mostrarTodos ? 'Ocultar' : 'Todo' }}
     </app-button-change>
 
     <app-button-change 
         [color]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
         (click)="change()"
     >
-        {{ passFlag === 1 ? 'Mostrar desaprobados' : 'Mostrar aprobados' }}
+        {{ passFlag === 1 ? 'Desaprobados' : 'Aprobados' }}
     </app-button-change>
 
 

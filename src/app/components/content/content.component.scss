@@ -1,15 +1,17 @@
 .content{
+    display: block;
     position: fixed;
     top: 10%;
     left: 11%;
     min-height: 90%;
     width: 89%;
-    padding: 3% ;
+    padding: 2% 3%;
     background-color: #f7f9e0;
 }
 
 table{
-    margin-top: 3%;
+    height: auto;
+    margin-top: 2%;
 }
 
 .table-title{
@@ -24,9 +26,4 @@ td{
 .average{
     text-align: right;
     width: 100px;
-}
-
-.btn{
-    margin-right: 2%;
-    width: 110px;
 }
