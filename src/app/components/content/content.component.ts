@@ -11,7 +11,7 @@ export class ContentComponent {
 
   public readonly passNote: number = 6;
   public alumnosList: Array<Alumno> = alumnos;
-  public list: Array<Alumno> = [];
+  public listToShow: Array<Alumno> = [];
   public passFlag: number = 0;
   public mostrarTodos: boolean = true;
 
@@ -26,21 +26,14 @@ export class ContentComponent {
   }
 
   showList(): Array<Alumno> {
-
-    if (this.mostrarTodos) {
       switch (this.passFlag){
-        case 0: { 
-          this.list = this.alumnosList; 
-          break;};
-        case 1: { 
-          this.list = this.getAprobados();
-          break;};
-        case 2: { 
-          this.list = this.getDesaprobados(); 
-          break;}
+        case 1: 
+          return this.getAprobados();
+        case 2: 
+          return this.getDesaprobados();
+        default:
+          return this.alumnosList;
       }
-    }
-    return this.list;
   }
 
   change(){
