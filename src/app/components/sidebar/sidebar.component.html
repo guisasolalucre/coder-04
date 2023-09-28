@@ -1,4 +1,16 @@
 <aside>
+
+    <app-button-change 
+        [color]="showAll ? 'btn-danger' : 'btn-success'"
+        (click)="changeShow()">
+        {{ showAll ? 'Ocultar' : 'Todo' }}
+    </app-button-change>
+
+    <app-button-change 
+        [color]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
+        (click)="changeFlag()">
+        {{ passFlag === 1 ? 'Desaprobados' : 'Aprobados' }}
+    </app-button-change>
     
     
     <div id="contact">

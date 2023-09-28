@@ -1,20 +1,7 @@
 <div class="content">
 
-    <app-button-change 
-        [color]="mostrarTodos ? 'btn-danger' : 'btn-success'"
-        (click)="(mostrarTodos = !mostrarTodos) && passFlag = 0">
-        {{ mostrarTodos ? 'Ocultar' : 'Todo' }}
-    </app-button-change>
-
-    <app-button-change 
-        [color]="passFlag === 1 ? 'btn-danger' : 'btn-success'" 
-        (click)="change()">
-        {{ passFlag === 1 ? 'Desaprobados' : 'Aprobados' }}
-    </app-button-change>
-
-
     <app-students-table
-        *ngIf="mostrarTodos"
+        *ngIf="showAll"
         [list]= showList()
         [passNote]="passNote"
         (send)="sendEmail($event)">

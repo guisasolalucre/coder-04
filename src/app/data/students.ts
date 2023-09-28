@@ -1,6 +1,6 @@
-import { Alumno } from "../model";
+import { Student } from "../model";
 
-export let alumnos:Array<Alumno> = [
+export let students:Array<Student> = [
     {
         id: "12345678",
         name: "John",
@@ -8,6 +8,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1990-01-01"),
         avgNote: 9.5,
         email:"rick@szechuansauce.com",
+        courses: [],
     },
     {
         id: "87654321",
@@ -16,6 +17,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1995-05-10"),
         avgNote: 8.2,
         email:"morty.lover@emailsmith.com",
+        courses: [],
     },
     {
         id: "98765432",
@@ -24,6 +26,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1993-10-15"),
         avgNote: 4,
         email:"portalgunfanatic@emailverse.net",
+        courses: [],
     },
     {
         id: "23456789",
@@ -32,6 +35,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1992-06-20"),
         avgNote: 6,
         email:"pickle.rick@emailportal.org",
+        courses: [],
     },
     {
         id: "76543210",
@@ -40,6 +44,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1991-02-25"),
         avgNote: 5.9,
         email:"interdimensional.traveler@emailmultiverse.com",
+        courses: [],
     },
     {
         id: "54321098",
@@ -48,6 +53,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1994-08-05"),
         avgNote: 9.1,
         email:"squanchmaster@emaildimensional.com",
+        courses: [],
     },
     {
         id: "89012345",
@@ -56,6 +62,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1996-12-30"),
         avgNote: 7.3,
         email:"birdpersonfan@emailavianworld.com",
+        courses: [],
     },
     {
         id: "45678901",
@@ -64,6 +71,7 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1997-04-12"),
         avgNote: 5.5,
         email:"meeseeks@emailtaskandpurpose.net",
+        courses: [],
     },
     {
         id: "67890123",
@@ -72,5 +80,6 @@ export let alumnos:Array<Alumno> = [
         dob: new Date("1998-08-18"),
         avgNote: 6.5,
         email:"plumbusowner@emailextraterrestrial.com",
+        courses: [],
     }
 ]

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Alumno } from '../../model';
-import { alumnos } from '../../data/data'
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Student } from '../../model';
+import { students } from '../../data/students'
 
 @Component({
   selector: 'app-content',
@@ -9,39 +9,35 @@ import { alumnos } from '../../data/data'
 })
 export class ContentComponent {
 
-  public readonly passNote: number = 6;
-  public alumnosList: Array<Alumno> = alumnos;
-  public listToShow: Array<Alumno> = [];
-  public passFlag: number = 0;
-  public mostrarTodos: boolean = true;
+  readonly passNote: number = 6;
+  studentsList: Array<Student> = students;
+  listToShow: Array<Student> = [];
+
+  @Input()
+  passFlag: number = 0;
+
+  @Input()
+  showAll: boolean = true;
 
   constructor() { }
 
-  getAprobados(): Array<Alumno> {
-    return this.alumnosList.filter((alumno: Alumno) => alumno.avgNote >= this.passNote)
+  getPassed(): Array<Student> {
+    return this.studentsList.filter((student: Student) => student.avgNote >= this.passNote)
   }
 
-  getDesaprobados(): Array<Alumno> {
-    return this.alumnosList.filter((alumno: Alumno) => alumno.avgNote < this.passNote)
+  getFailed(): Array<Student> {
+    return this.studentsList.filter((student: Student) => student.avgNote < this.passNote)
   }
 
-  showList(): Array<Alumno> {
+  showList(): Array<Student> {
       switch (this.passFlag){
         case 1: 
-          return this.getAprobados();
+          return this.getPassed();
         case 2: 
-          return this.getDesaprobados();
+          return this.getFailed();
         default:
-          return this.alumnosList;
+          return this.studentsList;
       }
-  }
-
-  change(){
-    if(this.passFlag === 1){
-      this.passFlag = 2
-    } else {
-      this.passFlag = 1
-    }    
   }
 
   sendEmail(event: string){

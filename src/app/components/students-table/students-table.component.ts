@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Alumno } from 'src/app/model';
+import { Student } from 'src/app/model';
 
 @Component({
   selector: 'app-students-table',
@@ -9,7 +9,7 @@ import { Alumno } from 'src/app/model';
 export class StudentsTableComponent {
 
   @Input()
-  list: Array<Alumno> = []
+  list: Array<Student> = []
   
   @Input()
   passNote: number = 0;
@@ -19,8 +19,8 @@ export class StudentsTableComponent {
 
   constructor(){ }
 
-  sendEmail(alumno: Alumno): void{
-    this.send.emit(alumno.email)
+  sendEmail(student: Student): void{
+    this.send.emit(student.email)
   }
 
 }

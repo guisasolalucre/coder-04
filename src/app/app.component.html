@@ -1,4 +1,14 @@
 
 <app-toolbar></app-toolbar>
-<app-sidebar></app-sidebar>
-<app-content></app-content>
+
+
+<app-sidebar
+    [(passFlag)]="passFlag"
+    [(showAll)]="showAll"
+></app-sidebar>
+
+
+<app-content
+    [passFlag]="passFlag"
+    [showAll]="showAll"
+></app-content>
