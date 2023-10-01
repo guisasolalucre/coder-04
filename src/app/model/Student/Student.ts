@@ -5,6 +5,7 @@ export class Student implements IStudent{
 
     constructor(
         public id: string, 
+        public active: boolean = true,
         public name: string, 
         public surname: string, 
         public dob: Date,

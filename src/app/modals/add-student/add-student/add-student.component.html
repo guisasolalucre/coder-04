@@ -1,0 +1,103 @@
+<div class="card bg-light">
+    <h5 class="card-title card-header text-center">ALTA DE ALUMNO</h5>
+    <form class="card-body" [formGroup]="addStudentForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+
+            <!-- DNI -->
+            <div class="form-group col">
+                <label for="id">DNI:</label>
+                <input type="text" class="form-control" 
+                    formControlName="id"
+                [ngClass]="{ 'is-invalid': idControlIsInvalid }">
+
+                <div class="invalid-feedback">
+                    <ng-container *ngIf="idControl.errors?.['required']">
+                        El DNI no puede estar vacío
+                    </ng-container>
+                    <ng-container *ngIf="idControl.errors?.['minlength'] || idControl.errors?.['maxlength'] || idControl.errors?.['pattern']">
+                        El DNI tiene que tener 8 caracteres numéricos únicamente
+                    </ng-container>
+                </div>
+            </div>
+
+
+            <!-- NACIMIENTO -->
+            <div class="form-group col">
+                <label for="dob">Nacimiento:</label>
+                <input type="date" class="form-control" 
+                max="{{today | date:'yyyy-MM-dd'}}"
+                formControlName="dob">
+            </div>
+
+        </div>
+
+
+        <!-- NOMBRE -->
+        <div class="form-group">
+            <label for="name">Nombre/s:</label>
+            <input type="text" class="form-control"
+                    formControlName="name"
+                    [ngClass]="{ 'is-invalid': nameControlIsInvalid }">
+
+            <div class="invalid-feedback">
+                <ng-container *ngIf="nameControl.errors?.['required']">
+                    El nombre no puede estar vacío
+                </ng-container>
+                <ng-container *ngIf="nameControl.errors?.['pattern']">
+                    El nombre sólo puede contener letras
+                </ng-container>
+            </div>
+        </div>
+
+
+        <!-- APELLIDO -->
+        <div class="form-group">
+            <label for="surname">Apellido/s:</label>
+            <input type="text" class="form-control" 
+            formControlName="surname"
+            [ngClass]="{ 'is-invalid': surnameControlIsInvalid }">
+
+            <div class="invalid-feedback">
+                <ng-container *ngIf="surnameControl.errors?.['required']">
+                    El apellido no puede estar vacío
+                </ng-container>
+                <ng-container *ngIf="surnameControl.errors?.['pattern']">
+                    El apellido sólo puede contener letras
+                </ng-container>
+            </div>
+        </div>
+
+
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" formControlName="email"
+                [ngClass]="{ 'is-invalid': emailControlIsInvalid }">
+            <div class="invalid-feedback">
+                <ng-container *ngIf="emailControl.errors?.['required']">
+                    El email no puede estar vacío
+                </ng-container>
+                <ng-container *ngIf="emailControl.errors?.['email']">
+                    No ingresó un email válido
+                </ng-container>
+            </div>
+        </div>
+
+        <!--  CURSOS
+        <div class="form-group">
+            <label for="courses">Cursos</label>
+            <select 
+                multiple class="form-control"
+                formControlName="courses">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            </select>
+        </div> 
+        -->
+
+        <button type="submit" class="btn btn-primary btn-m">Confirmar</button>
+    </form>
+</div>

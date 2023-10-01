@@ -10,4 +10,5 @@ export class AppComponent {
 
   public passFlag: number = 0;
   public showAll: boolean = true;
+  public showForm: boolean = false;
 }

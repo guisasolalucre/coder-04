@@ -19,6 +19,9 @@ export class ContentComponent {
   @Input()
   showAll: boolean = true;
 
+  @Input()
+  showForm: boolean = false;
+
   constructor() { }
 
   getPassed(): Array<Student> {

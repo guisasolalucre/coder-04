@@ -7,4 +7,9 @@
         (send)="sendEmail($event)">
     </app-students-table>
 
+    <app-add-student
+        *ngIf="!showAll && showForm"
+    
+    ></app-add-student>
+
 </div>

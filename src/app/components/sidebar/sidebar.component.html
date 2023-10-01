@@ -11,6 +11,12 @@
         (click)="changeFlag()">
         {{ passFlag === 1 ? 'Desaprobados' : 'Aprobados' }}
     </app-button-change>
+
+    <app-button-change 
+        *ngIf="!showForm"
+        (click)="changeForm()">
+        Alta alumno
+    </app-button-change>
     
     
     <div id="contact">

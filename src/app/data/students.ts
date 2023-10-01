@@ -3,6 +3,7 @@ import { Student } from "../model";
 export let students:Array<Student> = [
     {
         id: "12345678",
+        active: true,
         name: "John",
         surname: "Smith",
         dob: new Date("1990-01-01"),
@@ -12,6 +13,7 @@ export let students:Array<Student> = [
     },
     {
         id: "87654321",
+        active: true,
         name: "Jane",
         surname: "Doe",
         dob: new Date("1995-05-10"),
@@ -21,6 +23,7 @@ export let students:Array<Student> = [
     },
     {
         id: "98765432",
+        active: true,
         name: "Michael",
         surname: "Johnson",
         dob: new Date("1993-10-15"),
@@ -30,6 +33,7 @@ export let students:Array<Student> = [
     },
     {
         id: "23456789",
+        active: true,
         name: "Emily",
         surname: "Brown",
         dob: new Date("1992-06-20"),
@@ -39,6 +43,7 @@ export let students:Array<Student> = [
     },
     {
         id: "76543210",
+        active: true,
         name: "David",
         surname: "Wilson",
         dob: new Date("1991-02-25"),
@@ -48,6 +53,7 @@ export let students:Array<Student> = [
     },
     {
         id: "54321098",
+        active: true,
         name: "Sarah",
         surname: "Taylor",
         dob: new Date("1994-08-05"),
@@ -57,6 +63,7 @@ export let students:Array<Student> = [
     },
     {
         id: "89012345",
+        active: true,
         name: "Daniel",
         surname: "Anderson",
         dob: new Date("1996-12-30"),
@@ -66,6 +73,7 @@ export let students:Array<Student> = [
     },
     {
         id: "45678901",
+        active: true,
         name: "Sophia",
         surname: "Clark",
         dob: new Date("1997-04-12"),
@@ -75,6 +83,7 @@ export let students:Array<Student> = [
     },
     {
         id: "67890123",
+        active: true,
         name: "Matthew",
         surname: "Robinson",
         dob: new Date("1998-08-18"),

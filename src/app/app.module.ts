@@ -8,6 +8,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ContentComponent } from './components/content/content.component';
 import { ButtonChangeComponent } from './components/button-change/button-change.component';
 import { StudentsTableComponent } from './components/students-table/students-table.component';
+import { AddStudentComponent } from './modals/add-student/add-student/add-student.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StudentsTableComponent } from './components/students-table/students-tab
     ContentComponent,
     ButtonChangeComponent,
     StudentsTableComponent,
+    AddStudentComponent,
   ],
   imports: [
     BrowserModule,
