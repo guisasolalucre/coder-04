@@ -27,7 +27,17 @@
                 <label for="dob">Nacimiento:</label>
                 <input type="date" class="form-control" 
                 max="{{today | date:'yyyy-MM-dd'}}"
-                formControlName="dob">
+                formControlName="dob"
+                [ngClass]="{ 'is-invalid': dobControlIsInvalid }">
+
+                <div class="invalid-feedback">
+                    <ng-container *ngIf="dobControl.errors?.['required']">
+                        La fecha de nacimiento es inválida
+                    </ng-container>
+                    <ng-container *ngIf="dobControl.errors?.['age']">
+                        El alumno no puede ser menor de edad
+                    </ng-container>
+                </div>
             </div>
 
         </div>

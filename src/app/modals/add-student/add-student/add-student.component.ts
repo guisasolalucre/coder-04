@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
+import { ageValidator } from 'src/app/util/custom-validators';
 
 @Component({
   selector: 'app-add-student',
@@ -24,7 +25,7 @@ export class AddStudentComponent {
                 Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+')]],
     surname: ['', [Validators.required,
                    Validators.pattern('[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+')]],
-    dob: ['', [Validators.required]],
+    dob: ['', [Validators.required, ageValidator]],
     email: ['', [Validators.required, Validators.email]],
   })
 
@@ -59,6 +60,14 @@ export class AddStudentComponent {
 
   get surnameControlIsInvalid() {
     return this.surnameControl.invalid && this.surnameControl.touched;
+  }
+
+  get dobControl() {
+    return this.addStudentForm.controls['dob'];
+  }
+
+  get dobControlIsInvalid() {
+    return this.dobControl.invalid && this.dobControl.touched;
   }
 
   get emailControl() {
